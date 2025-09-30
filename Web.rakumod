@@ -23,8 +23,8 @@ class FileList does Component {
     }
 
     method HTML {
-        ~ do for $*node.index.keys.sort -> $filename {
-            my $file = File.new(:$filename);
+        ~ do for ($*node.index.keys.sort [Z] ^Inf) -> ($filename, $id) {
+            my $file = File.new(:$filename, :id(+$id));
             tr
                 td( $file.filename ~ "({$file.id})"),
                 td( button :type<submit>, :hx-get("{$file.url-path}/download"), 'Download')
