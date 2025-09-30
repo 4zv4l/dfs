@@ -5,6 +5,9 @@ use Air::Component;
 class File does Component {
     has $.filename;
 
+    # TODO implement this
+    # use $*node to get the file if the file isnt in the node
+    # then it will get a link from another node for the download
     method download is controller {
         say "Downloading $.filename !";
         "Download"
@@ -27,7 +30,7 @@ class FileList does Component {
             my $file = File.new(:$filename, :id(+$id));
             tr
                 td( $file.filename ~ "({$file.id})"),
-                td( button :type<submit>, :hx-get("{$file.url-path}/download"), 'Download')
+                td( a :href("{$file.url-path}/download"), 'Download')
         }
     }
 }
