@@ -15,7 +15,7 @@ method TWEAK {
         }
     }
 
-    # neighbours handling
+    # neighbours loading
 }
 
 method announce() {
@@ -46,6 +46,12 @@ method listen() {
             }
         }
     }
+}
+
+# if file not local ask another
+# Node for a link for download
+method download($path) {
+
 }
 
 method serve {

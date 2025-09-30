@@ -4,17 +4,20 @@ use Air::Component;
 
 class File does Component {
     has $.filename;
+    has $.node;
 
     # TODO implement this
-    # use $*node to get the file if the file isnt in the node
+    # use $.node to get the file if the file isnt in the node
     # then it will get a link from another node for the download
     method download is controller {
-        say "Downloading $.filename !";
+        say "Downloading $.filename ({$.node.index.raku}) !";
         "Download"
     }
 }
 
 class FileList does Component {
+    has $.node is rw;
+
     method refresh is controller {
         self.HTML
     }
@@ -26,8 +29,8 @@ class FileList does Component {
     }
 
     method HTML {
-        ~ do for ($*node.index.keys.sort [Z] ^Inf) -> ($filename, $id) {
-            my $file = File.new(:$filename, :id(+$id));
+        ~ do for ($.node.index.keys.sort [Z] ^Inf) -> ($filename, $id) {
+            my $file = File.new(:$filename, :$.node, :id(+$id));
             tr
                 td( $file.filename ~ "({$file.id})"),
                 td( a :href("{$file.url-path}/download"), 'Download')
@@ -44,10 +47,10 @@ my &index = &page.assuming(
     ),
 );
 
-my $filelist = FileList.new;
-my $file     = File.new(:filename("to create route"));
+sub SITE($node) is export {
+    my $filelist = FileList.new(:$node);
+    my $file     = File.new(:filename("to create route"));
 
-sub SITE is export {
     site :register[$filelist, $file],
     index
     main [

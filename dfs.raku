@@ -1,6 +1,8 @@
 #!/usr/bin/env raku
 
 use lib '.';
+use Node;
+use Web;
 
 unit sub MAIN(
     :sa(:$sock-addr) = 'localhost', #= Bind to this address for the udp/tcp server
@@ -11,10 +13,8 @@ unit sub MAIN(
     *@paths,                        #= Path to directories to share
 );
 
-use Node;
-our $node = Node.new: :lhost($sock-addr), :lport($sock-port), :@paths;
+my $node = Node.new: :lhost($sock-addr), :lport($sock-port), :@paths;
 $node.serve;
 say $node.index.raku;
 
-use Web;
-SITE.serve(:host($web-addr), :port($web-port));
+SITE($node).serve(:host($web-addr), :port($web-port));
