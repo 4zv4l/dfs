@@ -1,0 +1,1366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RAKU_MODULE_TYPE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="module-library">
+      <library name="UUID::V4:ver&lt;1.0.0&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:UUID::V4:ver&lt;1.0.0&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="fez:ver&lt;38+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:fez:ver&lt;38+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="HTML::Escape:ver&lt;0.0.1&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:HTML::Escape:ver&lt;0.0.1&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Math::Matrix" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Math::Matrix!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Hash::Merge" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Hash::Merge!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="App::Mi6" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:App::Mi6!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="LLM::Prompts" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:LLM::Prompts!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Text::CSV" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Text::CSV!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="TAP:ver&lt;0.3.8+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:TAP:ver&lt;0.3.8+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Path::Finder" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Path::Finder!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Unmarshal:ver&lt;0.14+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Unmarshal:ver&lt;0.14+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="DB::Pg" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:DB::Pg!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Class:ver&lt;0.0.20+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Class:ver&lt;0.0.20+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Tiny" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Tiny!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Math::Vector" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Math::Vector!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="META6:ver&lt;0.0.24+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:META6:ver&lt;0.0.24+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="WWW::PaLM:ver&lt;0.1.9+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:WWW::PaLM:ver&lt;0.1.9+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Pod::To::HTML" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Pod::To::HTML!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="if" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:if!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="IO::Path::ChildSecure" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:IO::Path::ChildSecure!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="IO::Socket::Async::SSL" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:IO::Socket::Async::SSL!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Docker::File" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Docker::File!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Terminal::ANSIColor" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Terminal::ANSIColor!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="YAMLish" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:YAMLish!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="NativeCall::TypeDiag" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:NativeCall::TypeDiag!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Marshal:ver&lt;0.0.25+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Marshal:ver&lt;0.0.25+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="LibraryMake" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:LibraryMake!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Terminal::ANSI" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Terminal::ANSI!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Test::When" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Test::When!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Air" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Air!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="TAP:ver&lt;0.3.4+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:TAP:ver&lt;0.3.4+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Physics::Constants" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Physics::Constants!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="OpenSSL:ver&lt;0.2.4+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:OpenSSL:ver&lt;0.2.4+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="WWW::LLaMA:ver&lt;0.1.3+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:WWW::LLaMA:ver&lt;0.1.3+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Terminal::ANSI::OO" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Terminal::ANSI::OO!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="File::Ignore" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:File::Ignore!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Fast:ver&lt;0.16+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Fast:ver&lt;0.16+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Digest::SHA1::Native" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Digest::SHA1::Native!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Crypt::Random" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Crypt::Random!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Test::Output" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Test::Output!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Digest::SHA256::Native" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Digest::SHA256::Native!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Cro::WebSocket:ver&lt;0.8.10+&gt;:api&lt;0&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Cro::WebSocket:ver&lt;0.8.10+&gt;:api&lt;0&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="WWW::OpenAI:ver&lt;0.3.8+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:WWW::OpenAI:ver&lt;0.3.8+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="CBOR::Simple" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:CBOR::Simple!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Unmarshal" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Unmarshal!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Base64" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Base64!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::JWT" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::JWT!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Digest::HMAC" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Digest::HMAC!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Win32::Registry" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Win32::Registry!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="URI" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:URI!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Name:ver&lt;0.0.6+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Name:ver&lt;0.0.6+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Getopt::Long" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Getopt::Long!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="OO::Monitors" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:OO::Monitors!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="WWW::Gemini:ver&lt;0.0.20+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:WWW::Gemini:ver&lt;0.0.20+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="HTML::Escape" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:HTML::Escape!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Prompt:ver&lt;0.0.10+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Prompt:ver&lt;0.0.10+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Marshal" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Marshal!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Slang::NumberBase" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Slang::NumberBase!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="IO::Socket::Async::SSL:ver&lt;0.7.10+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:IO::Socket::Async::SSL:ver&lt;0.7.10+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="MIME::Base64" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:MIME::Base64!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="runtime =&gt; {&quot;requires&quot;:[&quot;NativeCall&quot;,&quot;NativeLibs:ver&lt;0.0.7+&gt;:auth&lt;github:salortiz&gt;&quot;,&quot;LibUUID&quot;,&quot;JSON::Fast&quot;,&quot;pq:from&lt;native&gt;:ver&lt;5&gt;&quot;]}" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:runtime =&gt; {&quot;requires&quot;:[&quot;NativeCall&quot;,&quot;NativeLibs:ver&lt;0.0.7+&gt;:auth&lt;github:salortiz&gt;&quot;,&quot;LibUUID&quot;,&quot;JSON::Fast&quot;,&quot;pq:from&lt;native&gt;:ver&lt;5&gt;&quot;]}!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Template::Mustache" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Template::Mustache!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="DateTime::Format" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:DateTime::Format!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Red" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Red!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Fast:ver&lt;0.19+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Fast:ver&lt;0.19+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="LibraryCheck" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:LibraryCheck!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Pod::Load:ver&lt;0.4.0+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Pod::Load:ver&lt;0.4.0+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Slangify" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Slangify!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="TOML" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:TOML!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Slang::Roman" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Slang::Roman!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="TinyFloats" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:TinyFloats!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="TAP" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:TAP!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Readline" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Readline!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Chemistry::Stoichiometry" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Chemistry::Stoichiometry!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="File::Directory::Tree" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:File::Directory::Tree!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="sigpipe" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:sigpipe!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Log::Async" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Log::Async!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Math::Constants" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Math::Constants!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="META6" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:META6!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Text::SubParsers:ver&lt;0.1.1+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Text::SubParsers:ver&lt;0.1.1+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Name" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Name!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="test =&gt; {&quot;requires&quot;:[&quot;Test&quot;,&quot;Test::When&quot;]}" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:test =&gt; {&quot;requires&quot;:[&quot;Test&quot;,&quot;Test::When&quot;]}!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="WWW::MistralAI:ver&lt;0.1.3+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:WWW::MistralAI:ver&lt;0.1.3+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Test" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Test!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Test::META" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Test::META!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="DateTime::Parse" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:DateTime::Parse!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Class" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Class!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="fez" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:fez!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="runtime =&gt; {&quot;requires&quot;:[&quot;Slangify:ver&lt;0.0.4+&gt;:auth&lt;zef:lizmat&gt;&quot;]}" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:runtime =&gt; {&quot;requires&quot;:[&quot;Slangify:ver&lt;0.0.4+&gt;:auth&lt;zef:lizmat&gt;&quot;]}!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="File::Temp" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:File::Temp!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="UUID" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:UUID!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="App::RaCoCo" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:App::RaCoCo!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="App::Crag" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:App::Crag!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Pod::To::Markdown:ver&lt;0.2.1+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Pod::To::Markdown:ver&lt;0.2.1+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::OptIn" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::OptIn!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="runtime =&gt; {&quot;requires&quot;:[&quot;File::Directory::Tree:ver&lt;0.2+&gt;:auth&lt;zef:raku-community-modules&gt;&quot;]}" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:runtime =&gt; {&quot;requires&quot;:[&quot;File::Directory::Tree:ver&lt;0.2+&gt;:auth&lt;zef:raku-community-modules&gt;&quot;]}!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="HTTP::Tiny" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:HTTP::Tiny!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Getopt::Long:ver&lt;0.3.0+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Getopt::Long:ver&lt;0.3.0+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="DateTime::Format:ver&lt;0.1.5&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:DateTime::Format:ver&lt;0.1.5&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="OpenSSL" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:OpenSSL!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="License::SPDX" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:License::SPDX!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="NativeLibs" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:NativeLibs!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="LibUUID" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:LibUUID!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="App::Prove6" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:App::Prove6!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="UUID::V4" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:UUID::V4!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Cro::Core:ver&lt;0.8.10+&gt;:api&lt;0&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Cro::Core:ver&lt;0.8.10+&gt;:api&lt;0&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Text::Markdown:ver&lt;1.1.1&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Text::Markdown:ver&lt;1.1.1&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="CLI::AWS::EC2-Simple" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:CLI::AWS::EC2-Simple!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Physics::Error" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Physics::Error!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="CSS::Writer:ver&lt;0.2.10&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:CSS::Writer:ver&lt;0.2.10&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Cro::WebSocket" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Cro::WebSocket!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Cro::TLS:ver&lt;0.8.10+&gt;:api&lt;0&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Cro::TLS:ver&lt;0.8.10+&gt;:api&lt;0&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="HTTP::HPACK:ver&lt;1.0.1+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:HTTP::HPACK:ver&lt;1.0.1+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PathTools" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:PathTools!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Cro::HTTP" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Cro::HTTP!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="IO::Socket::SSL" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:IO::Socket::SSL!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Physics::Vector" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Physics::Vector!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Shell::Command" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Shell::Command!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Cro::WebApp:ver&lt;0.10.0&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Cro::WebApp:ver&lt;0.10.0&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Slang::Tuxic" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Slang::Tuxic!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Physics::Unit" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Physics::Unit!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Slangify:ver&lt;0.0.4+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Slangify:ver&lt;0.0.4+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Physics::Measure" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Physics::Measure!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="File::Which" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:File::Which!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="CodeUnit:ver&lt;0.0.6+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:CodeUnit:ver&lt;0.0.6+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="XDG::BaseDirectory:ver&lt;0.0.13+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:XDG::BaseDirectory:ver&lt;0.0.13+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="DBIish" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:DBIish!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="cro" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:cro!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="NativeHelpers::Blob" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:NativeHelpers::Blob!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="NativeCall" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:NativeCall!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="HTTP::HPACK" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:HTTP::HPACK!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Cro::HTTP:ver&lt;0.8.11&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Cro::HTTP:ver&lt;0.8.11&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Pod::Usage" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Pod::Usage!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Cro::HTTP:ver&lt;0.8.10+&gt;:api&lt;0&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Cro::HTTP:ver&lt;0.8.10+&gt;:api&lt;0&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="AttrX::Lazy" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:AttrX::Lazy!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Pod::Load" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Pod::Load!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="HTTP::Tiny:ver&lt;0.2.5+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:HTTP::Tiny:ver&lt;0.2.5+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="TinyFloats:ver&lt;0.0.3+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:TinyFloats:ver&lt;0.0.3+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Log::Timeline" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Log::Timeline!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="LLM::DWIM" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:LLM::DWIM!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="FatRatStr" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:FatRatStr!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Class:ver&lt;0.0.14+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Class:ver&lt;0.0.14+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Cro::Core" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Cro::Core!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Path::Finder:ver&lt;0.4.4+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Path::Finder:ver&lt;0.4.4+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="File::Find" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:File::Find!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Cromponent:ver&lt;0.0.13&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Cromponent:ver&lt;0.0.13&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Fast:ver&lt;0.17+&gt;" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Fast:ver&lt;0.17+&gt;!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Cro::TLS" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Cro::TLS!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="JSON::Fast" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:JSON::Fast!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="LLM::Functions" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:LLM::Functions!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Air::Play" type="raku">
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="raku://1166071006:Air::Play!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>
