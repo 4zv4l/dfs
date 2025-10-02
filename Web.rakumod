@@ -32,7 +32,7 @@ class FileList does Component {
         ~ do for ($.node.index.keys.sort [Z] ^Inf) -> ($filename, $id) {
             my $file = File.new(:$filename, :$.node, :id(+$id));
             tr
-                td( $file.filename ~ "({$file.id})"),
+                td( $file.filename ),
                 td( a :href("{$file.url-path}/download"), 'Download')
         }
     }
@@ -54,10 +54,13 @@ sub SITE($node) is export {
     site :register[$filelist, $file],
     index
     main [
-        h3 'Files:';
+        div :style<width:25%; display:flex;>, [
+            h3 'Files:';
+            button :style<transform:scale(0.80)>, :type<submit>, |$filelist.hx-refresh, 'Refresh';
+        ];
         table
             :thead[["filename"]],
             :tbody[[$filelist]];
-        button :type<submit>, |$filelist.hx-refresh, 'Refresh';
+        form [ input :type<file>; button :type<submit>, 'Upload' ];
     ]
 }
