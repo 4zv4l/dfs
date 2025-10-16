@@ -1,6 +1,6 @@
 #!/usr/bin/env raku
 
-use lib '.';
+use lib $*PROGRAM.dirname;
 use Node;
 use Web;
 
@@ -26,6 +26,5 @@ $node.serve;
 if $web-addr and $web-port {
     SITE($path).serve(:host($web-addr), :port($web-port));
 } else {
-    say "Starting !";
     react whenever signal(SIGINT) {exit}
 }

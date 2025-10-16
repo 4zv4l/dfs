@@ -13,60 +13,75 @@ has            $.lport;
 # build %index from $path
 method TWEAK {
     for find(:dir($!path), :type('file')) -> $file {
-        %index{$file} = $file.IO.modified;
+        %index{$file.IO.relative} = $file.IO.modified.to-posix[0];
     }
 }
 
 # send to all known nodes our current index
 method announce() {
-    race for %!nodes.keys -> $addr {
-        IO::Socket::Async.connect(|$addr.split(':')).then: -> $promise {
-            given $promise.result {
-                say "Connected !";
-                .print("INDEX {to-json %index}");
+    await race for %!nodes.keys -> $node-laddr {
+        IO::Socket::Async.connect(|$node-laddr.split(':')).then: -> $promise {
+            say "sending index to $node-laddr";
+            try given $promise.result {
+                .print(to-json({:$!lhost, :$!lport}) ~ "\n");
+                .print("INDEX {to-json %index}\n");
                 .close;
-            }
+            } // (%!nodes{$node-laddr}:delete);
         }
     }
+    say "done sending index";
 }
 
 # get request from other nodes
 method listen() {
     IO::Socket::Async.listen($!lhost, $!lport).tap: -> $conn {
-        my $node-addr = "{$conn.peer-host}:{$conn.peer-port}";
-        %!nodes{$node-addr} = now;
-        say "New node on {$node-addr}";
+        my $input               = $conn.Supply.lines.Channel;
+        my $node-laddr          = from-json $input.receive;
+        my %remote              = :addr("{$conn.peer-host}:{$conn.peer-port}"),
+        :lhost($node-laddr<lhost>),
+        :lport($node-laddr<lport>),
+        :laddr($node-laddr<lhost lport>.join(':'));
+        %!nodes{%remote<laddr>} = now;
+        say "New node on {%remote<addr>} listening on {%remote<laddr>}";
 
-        my $input = $conn.Supply.lines.Channel;
-        start loop {
-            try given $input.receive {
+        given $input.receive {
 
-                # Nodes send their index when joining or file update
-                when /INDEX \s+ $<json-index>=(.+)/ {
-                    my %remote-index = from-json $<json-index>;
-                    for %remote-index.kv -> $path, $time {
-                        # if does not exist in index or is older than remote-index (download)
-                        if !%index{$path} or (%index{$path}:exists and %index{$path} < $time) {
-                            %index{$path} = $time;
-                            $conn.print("REQUEST $path\n");
-                            $path.IO.spurt(decode-base64($input.receive, :bin));
-                        }
+            # Nodes send their index when joining or file update
+            when /INDEX \s+ $<json-index> = (.+)/ {
+                my %remote-index = from-json $<json-index>;
+                say "%remote<addr> sent index: {%remote-index.raku}";
+                for %remote-index.kv -> $path, $time {
+                    say "checking: $path";
+                    # if does not exist in index or is older than remote-index (download)
+                    if !%index{$path} or (%index{$path}:exists and Instant.from-posix(%index{$path}) < Instant.from-posix($time)) {
+                        say "$path not found";
+                        %index{$path} = $time;
+                        self.request($path, :host(%remote<lhost>), :port(%remote<lport>));
                     }
                 }
+            }
 
-                # Nodes request a file for download
-                when /REQUEST \s+ $<path>=(.+)/ {
-                    $<path>.IO.open(:bin).Supply(:size(64*1024*1024)).tap: -> $chunk {
-                        $conn.write(encode-base64($chunk, :bin));
-                    }
-                    $conn.print("\n");
-                }
+            # Nodes request a file for download
+            when /REQUEST \s+ $<path> = (.+)/ {
+                say "%remote<addr> request: $<path>";
+                await $conn.print: encode-base64($<path>.IO.slurp(:bin), :str);
+                await $conn.print: "\n";
+                say "done sending $<path>";
+            }
 
-            } // last;
-        }
+            default { say "Didnt recognize: $_" }
+        };
+    }
+}
 
-        # remove node if disconnect
-        LAST { %!nodes{$node-addr}:delete }
+method request($path, :$host, :$port) {
+    say "Asking $host:$port for $path";
+    given IO::Socket::INET.new(:$host, :$port) {
+        .print(to-json({:$!lhost, :$!lport}) ~ "\n");
+        .print("REQUEST $path\n");
+        $path.IO.dirname.IO.mkdir;
+        $path.IO.spurt(decode-base64(.get, :bin));
+        say "$path: has been downloaded";
     }
 }
 
@@ -74,7 +89,7 @@ method listen() {
 method watch() {
     $!path.IO.watch.act: {
         say "{.gist}";
-        %index{.path} = now;
+        %index{.path} = now.to-posix[0];
         self.announce;
     }
 }
