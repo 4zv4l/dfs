@@ -9,11 +9,12 @@ has            %index;
 has            $.path;
 has            $.lhost;
 has            $.lport;
+has            %skip-path;
 
 # build %index from $path
 method TWEAK {
     for find(:dir($!path), :type('file')) -> $file {
-        %index{$file.IO.relative} = $file.IO.modified.to-posix[0];
+        %index{$file.IO.relative($!path.IO.parent)} = $file.IO.modified.to-posix[0];
     }
 }
 
@@ -54,7 +55,6 @@ method listen() {
                     say "checking: $path";
                     # if does not exist in index or is older than remote-index (download)
                     if !%index{$path} or (%index{$path}:exists and Instant.from-posix(%index{$path}) < Instant.from-posix($time)) {
-                        say "$path not found";
                         %index{$path} = $time;
                         self.request($path, :host(%remote<lhost>), :port(%remote<lport>));
                     }
@@ -75,6 +75,9 @@ method listen() {
 }
 
 method request($path, :$host, :$port) {
+    # avoid sending index after downloading file (which triggers watch event)
+    $path.IO.e ?? (%skip-path{$path} += 1) !! (%skip-path{$path} += 2);
+    say "$path not found";
     say "Asking $host:$port for $path";
     given IO::Socket::INET.new(:$host, :$port) {
         .print(to-json({:$!lhost, :$!lport}) ~ "\n");
@@ -88,9 +91,16 @@ method request($path, :$host, :$port) {
 # Watch $path and update nodes when something happen
 method watch() {
     $!path.IO.watch.act: {
-        say "{.gist}";
-        %index{.path} = now.to-posix[0];
-        self.announce;
+        my $path = .path.IO.relative($!path.IO.parent);
+        say %skip-path.raku;
+        if %skip-path{$path}:exists and %skip-path{$path} > 0 {
+            say "skipped: $path: {.event}";
+            %skip-path{$path} -= 1;
+        } elsif $path.IO.f {
+            say "$path: {.event}";
+            %index{$path} = now.to-posix[0];
+            self.announce;
+        }
     }
 }
 
