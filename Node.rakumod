@@ -1,60 +1,87 @@
+use JSON::Tiny;
+use File::Find;
+use Base64;
+
 unit class Node;
 
-has Set[Node]  $neighbours;
-has            %.index is rw;
-has            @.paths;
+has            %.nodes is rw;
+has            %index;
+has            $.path;
 has            $.lhost;
 has            $.lport;
 
+# build %index from $path
 method TWEAK {
-    @.paths .= map: *.IO;
-    while @.paths -> $path {
-        for @.paths.pop.dir -> $entry {
-            %.index{$entry} = 1 if $entry.f;
-            @.paths.push($entry) if $entry.d;
-        }
+    for find(:dir($!path), :type('file')) -> $file {
+        %index{$file} = $file.IO.modified;
     }
-
-    # neighbours loading
 }
 
+# send to all known nodes our current index
 method announce() {
-    for $neighbours.keys -> $node {
-        IO::Socket::Async.udp.print-to: $node.lhost, $node.lport, "INDEX {to-json %.index}";
-    }
-}
-
-method listen() {
-    my $udp = IO::Socket::Async.bind-udp($.lhost, $.lport);
-    $udp.Supply(:datagram).tap: {
-        my ($rhost, $rport, $msg) = .hostname, .port, .data.gist;
-        given $msg {
-            when /INDEX\s+(.+)/ {
-                %.index = |%.index, |(from-json $0);
-                $neighbours{"{$rhost}"{$rport}}++;
-            }
-            when /REQUEST\s+(.+)/ {
-                given IO::Socket::INET.new(:host($rhost), :port($rport)) {
-                    .write: $0.IO.slurp(:bin);
-                }
-            }
-            when /ADDNODE\s(.+)/ {
-                $neighbours{$0};
-            }
-            when /DELNODE\s(.+)/ {
-                $neighbours{$0}:delete;
+    race for %!nodes.keys -> $addr {
+        IO::Socket::Async.connect(|$addr.split(':')).then: -> $promise {
+            given $promise.result {
+                say "Connected !";
+                .print("INDEX {to-json %index}");
+                .close;
             }
         }
     }
 }
 
-# if file not local ask another
-# Node for a link for download
-method download($path) {
+# get request from other nodes
+method listen() {
+    IO::Socket::Async.listen($!lhost, $!lport).tap: -> $conn {
+        my $node-addr = "{$conn.peer-host}:{$conn.peer-port}";
+        %!nodes{$node-addr} = now;
+        say "New node on {$node-addr}";
 
+        my $input = $conn.Supply.lines.Channel;
+        start loop {
+            try given $input.receive {
+
+                # Nodes send their index when joining or file update
+                # TODO: check for diff, if new file, request them
+                when /INDEX \s+ $<json-index>=(.+)/ {
+                    my %remote-index = from-json $<json-index>;
+                    for %remote-index.kv -> $path, $time {
+                        # if does not exist in index or is older than remote-index (download)
+                        if !%index{$path} or (%index{$path}:exists and %index{$path} < $time) {
+                            %index{$path} = $time;
+                            $conn.print("REQUEST $path\n");
+                            $path.IO.spurt(decode-base64($input.receive, :bin));
+                        }
+                    }
+                }
+
+                # Nodes request a file for download
+                when /REQUEST \s+ $<path>=(.+)/ {
+                    $<path>.IO.open(:bin).Supply(:size(64*1024*1024)).tap: -> $chunk {
+                        $conn.write(encode-base64($chunk, :bin));
+                    }
+                    $conn.print("\n");
+                }
+
+            } // last;
+        }
+
+        # remove node if disconnect
+        LAST { %!nodes{$node-addr}:delete }
+    }
+}
+
+# Watch $path and update nodes when something happen
+method watch() {
+    $!path.IO.watch.act: {
+        say "{.gist}";
+        %index{.path} = now;
+        self.announce;
+    }
 }
 
 method serve {
     self.announce;
     self.listen;
+    self.watch;
 }
