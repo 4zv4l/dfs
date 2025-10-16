@@ -42,7 +42,6 @@ method listen() {
             try given $input.receive {
 
                 # Nodes send their index when joining or file update
-                # TODO: check for diff, if new file, request them
                 when /INDEX \s+ $<json-index>=(.+)/ {
                     my %remote-index = from-json $<json-index>;
                     for %remote-index.kv -> $path, $time {
