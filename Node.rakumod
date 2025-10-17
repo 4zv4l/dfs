@@ -30,22 +30,23 @@ method announce() {
             } // (%!nodes{$node-laddr}:delete);
         }
     }
-    say "done sending index";
+    say "done announcing";
 }
 
 # get request from other nodes
 method listen() {
-    IO::Socket::Async.listen($!lhost, $!lport).tap: -> $conn {
+    my $server = IO::Socket::Async.listen($!lhost, $!lport).tap: -> $conn {
+        say "Connection received !";
         my $input               = $conn.Supply.lines.Channel;
         my $node-laddr          = from-json $input.receive;
         my %remote              = :addr("{$conn.peer-host}:{$conn.peer-port}"),
-        :lhost($node-laddr<lhost>),
-        :lport($node-laddr<lport>),
-        :laddr($node-laddr<lhost lport>.join(':'));
+                                  :laddr($node-laddr<lhost lport>.join(':')),
+                                  :lhost($node-laddr<lhost>),
+                                  :lport($node-laddr<lport>);
         %!nodes{%remote<laddr>} = now;
-        say "New node on {%remote<addr>} listening on {%remote<laddr>}";
+        say "Connection: %remote<addr> ::: %remote<laddr>";
 
-        given $input.receive {
+        start given $input.receive {
 
             # Nodes send their index when joining or file update
             when /INDEX \s+ $<json-index> = (.+)/ {
@@ -53,12 +54,12 @@ method listen() {
                 say "%remote<addr> sent index: {%remote-index.raku}";
                 for %remote-index.kv -> $path, $time {
                     say "checking: $path";
-                    # if does not exist in index or is older than remote-index (download)
                     if !%index{$path} or (%index{$path}:exists and Instant.from-posix(%index{$path}) < Instant.from-posix($time)) {
                         %index{$path} = $time;
                         self.request($path, :host(%remote<lhost>), :port(%remote<lport>));
                     }
                 }
+                say "Done with index received by %remote<addr>";
             }
 
             # Nodes request a file for download
@@ -68,16 +69,14 @@ method listen() {
                 await $conn.print: "\n";
                 say "done sending $<path>";
             }
-
-            default { say "Didnt recognize: $_" }
         };
     }
+    say "Listening on {join ':', await $server.socket-host, $server.socket-port}";
 }
 
 method request($path, :$host, :$port) {
     # avoid sending index after downloading file (which triggers watch event)
     $path.IO.e ?? (%skip-path{$path} += 1) !! (%skip-path{$path} += 2);
-    say "$path not found";
     say "Asking $host:$port for $path";
     given IO::Socket::INET.new(:$host, :$port) {
         .print(to-json({:$!lhost, :$!lport}) ~ "\n");
@@ -92,13 +91,11 @@ method request($path, :$host, :$port) {
 method watch() {
     $!path.IO.watch.act: {
         my $path = .path.IO.relative($!path.IO.parent);
-        say %skip-path.raku;
-        if %skip-path{$path}:exists and %skip-path{$path} > 0 {
-            say "skipped: $path: {.event}";
+        if (%skip-path{$path}:exists and %skip-path{$path} > 0) or (!%index{$path} and .event == FileRenamed) {
             %skip-path{$path} -= 1;
         } elsif $path.IO.f {
             say "$path: {.event}";
-            %index{$path} = now.to-posix[0];
+            %index{$path} = $path.IO.modified.to-posix[0];
             self.announce;
         }
     }
