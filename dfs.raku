@@ -3,6 +3,7 @@
 use lib $*PROGRAM.dirname;
 use Node;
 use Web;
+use Log::Async <debug color>;
 
 subset port of UInt;
 subset addr of Str;
