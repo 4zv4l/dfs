@@ -3,18 +3,8 @@ use Air::Base;
 use Air::Component;
 use File::Find;
 
-class File does Component {
-    has $.filename;
-
-    # TODO implement this
-    method download is controller {
-        say "Downloading $.filename !";
-        "Download"
-    }
-}
-
 class FileList does Component {
-    has $path;
+    has $.path;
 
     method refresh is controller {
         self.HTML
@@ -23,15 +13,16 @@ class FileList does Component {
     method hx-refresh(--> Hash()) {
         :hx-get("$.url-path/refresh"),
         :hx-target("tbody"),
+        :hx-trigger("every 5s"),
         :hx-swap<innerHTML>,
     }
 
     method HTML {
-        ~ do for (find(:dir($path), :type('file')) [Z] ^Inf) -> ($filename, $id) {
-            my $file = File.new(:$filename, :$.node, :id(+$id));
+        ~ do for find(:dir($!path), :type('file')) -> $filename {
+            my $filepath = $filename.relative($!path.IO.parent);
             tr
-                td( $file.filename ),
-                td( a :href("{$file.url-path}/download"), 'Download')
+                td( $filepath ),
+                td( a :href($filepath), 'Download')
         }
     }
 }
@@ -47,9 +38,8 @@ my &index = &page.assuming(
 
 sub SITE($path) is export {
     my $filelist = FileList.new(:$path);
-    my $file     = File.new(:filename("to create route"));
 
-    site :register[$filelist, $file],
+    site :register[$filelist],
     index
     main [
         div :style<width:25%; display:flex;>, [
