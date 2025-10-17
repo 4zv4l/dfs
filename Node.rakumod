@@ -5,21 +5,22 @@ use Log::Async;
 
 unit class Node;
 
-has            %.nodes is rw;
-has            %index;
-has            $.path;
-has            $.lhost;
-has            $.lport;
-has            %skip-path;
+has            %.nodes is rw;   #= neighbour nodes (dynamic)
+has            %index;          #= files index (dynamic)
+has            $.path;          #= path to share with nodes
+has            $.lhost;         #= listening address
+has            $.lport;         #= listening port
+has            %skip-path;      #= path to skip watch event (dynamic)
+has            %watched;        #= directories being watched (dynamic)
 
 # build %index from $path
 method TWEAK {
     for find(:dir($!path), :type('file')) -> $file {
-        %index{$file.IO.relative($!path.IO.parent)} = $file.IO.modified.to-posix[0];
+        %index{$file.IO.relative($!path.IO.parent)} = $file.IO.changed.to-posix[0];
     }
 }
 
-# send to all known nodes our current index
+# send to all known nodes our index and our nodes
 method announce() {
     race for %!nodes.keys -> $node-laddr {
         IO::Socket::Async.connect(|$node-laddr.split(':')).then: -> $promise {
@@ -48,7 +49,7 @@ method listen() {
 
         given $input.receive {
 
-            # Nodes send their index/nodes when joining or file update
+            # Nodes send their index/nodes when joining or on file update
             when /ANNOUNCE \s+ $<json> = (.+)/ {
                 my ($remote-index, $remote-nodes) = from-json($<json>)<index nodes>;
                 info "%remote<addr> sent index: {$remote-index.raku}, sent nodes: {$remote-nodes.raku}";
@@ -80,6 +81,7 @@ method listen() {
     info "Listening on {join ':', await $server.socket-host, $server.socket-port}";
 }
 
+# download $path from $host:$port
 method request($path, :$host, :$port) {
     # avoid sending index after downloading file (which triggers watch event)
     $path.IO.e ?? (%skip-path{$path} += 1) !! (%skip-path{$path} += 2);
@@ -100,13 +102,15 @@ method watch($dir) {
     $dir.IO.watch.act: {
         my $path = .path.IO.relative($!path.IO.parent);
         if $path.IO.d {
-            self.watch($path);
+            self.watch($path) unless %watched{$path};
+            %watched{$path} = now.to-posix[0];
             debug "Now watching: $path";
         } elsif (%skip-path{$path}:exists and %skip-path{$path} > 0) or (!%index{$path} and .event == FileRenamed) {
+            debug "Skipped: $path => {.event}";
             %skip-path{$path} -= 1;
         } elsif $path.IO.f {
             info "$path: {.event}";
-            %index{$path} = $path.IO.modified.to-posix[0];
+            %index{$path} = $path.IO.changed.to-posix[0];
             self.announce;
         }
     }
